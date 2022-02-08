@@ -3,6 +3,9 @@
 
 One-Time Invite Link Generator For Your Discord Server With A Web Page.
 
+<h2>⭐ Please Star The Repository</h2>
+Please star to make the repository stand out 🙏.
+
 <h2>💥 Installation</h2>
 
 <h4>You need Nodejs in your computer.</h4>
