@@ -1,0 +1,10 @@
+{
+    "bot-settings":{
+	"token":"your-token",
+	"max-age": 6400,
+	"max-uses": 1
+    },
+    "site-settings":{
+	"port":1337 
+    }
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>One-Time Invite Link</title>
+
+		<meta name="viewport" content="width=device-width,inital-scale=1">		
+		<style>
+			html,body{
+				height:100%;
+				width:100%;
+				font-family:sans-serif;
+				margin:0;
+				padding:0;
+			}
+
+			body{
+				background:#23272A;
+				display:flex;
+				justify-content:center;
+				align-items:center;
+				color:#fff;
+				
+			}
+
+			.container{
+				background:#2C2F33;
+				border-radius:15px;
+				width:80%;
+				max-width:650px;
+				height:50%;
+				max-height:400px;
+				padding:15px 10px;
+				text-align:center;
+				display:flex;
+				flex-direction:column;
+				justify-content:center;
+				align-items:center;
+			}
+
+			#btn{
+				background:#7289DA;
+				border:0;
+				border-radius:15px;
+				color:white;
+				padding:5px;
+				font-size:20px;
+				font-weight:700;
+				width:50%;
+			}
+
+			#loading{
+				font-size:15px;
+				display:none;
+			}
+		</style>
+
+	</head>
+	<body>
+		<main class="container">
+			<h2 id="title">Please click the button for get one-time invite link</h1>
+
+			<button id="btn">Click</button>
+			<p id="loading" >Generating a link ...</p>
+		</main>
+		
+		<script>
+			var btn = document.getElementById("btn");
+			btn.addEventListener("click",() => {
+				document.querySelector("#loading").style.display = "block";
+				btn.style.display = "none";
+				const xhttp = new XMLHttpRequest();
+				xhttp.onload = function() {
+					window.location= this.responseText
+				}
+				xhttp.open("POST", "/");
+				xhttp.setRequestHeader("get-link","true");
+				xhttp.send();
+			});
+		</script>
+	</body>
+</html>
